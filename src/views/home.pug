@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Exp manager - bronkhorst test page
+    body 
+        h1 Test Page for Bronkhorst Devices 
+        form#bronkhorstTX
+            input#bronkhorst-functions(list = "bronkhorstFunctions" name = "txFunction")
+            datalist#bronkhorstFunctions
+                each item in bronkhorstFunctions
+                    option( value=item ) 
+            input#bronkhorst-value(type="number" name = "txValue")
+            button send message
+        hr
+        div#bronkhorst-response
+            ul 
+                li.res_status Status: 
+                    short
+                li.res_value Value: 
+                    short
+script(src="/socket.io/socket.io.js")
+script(src="js/handleHome.js")
+
