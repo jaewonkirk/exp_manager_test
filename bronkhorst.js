@@ -758,6 +758,7 @@ export const toBronkhorst = (data) => {
 
 export const fromBronkhorst = (str) => {
     const result = {
+        type: "bronkhorst",
         dataLength: parseInt(str.slice(1,3), 16),
         node: str.slice(3,5),
         command: Number(str.slice(5,7)),
@@ -1003,8 +1004,9 @@ const translateStatus = (str) => {
 const hexToAscii = (str) => {
     const hexString = str;
     let strOut = '';
+        let x = 0;
         for (x = 0; x < hexString.length; x += 2) {
             strOut += String.fromCharCode(parseInt(hexString.substr(x, 2), 16));
         }
-    return strOut;    
+    return strOut;
 }

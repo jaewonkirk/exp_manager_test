@@ -4,23 +4,44 @@
   "type": "module",
   "description": "",
   "main": "index.js",
+  "nodemonConfig": {
+    "ignore": ["/**.json"]
+  },
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "gulp dev",
+    "server": "nodemon --exec babel-node index.js",
+    "serialtest": "babel-node serialtest.js",
+    "test": "babel-node test.js"
   },
   "author": "Jaewon Kirk",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "helmet": "^6.0.1",
     "morgan": "^1.10.0",
-    "pug": "^3.0.2",
     "serialport": "^10.5.0",
-    "socketio": "^1.0.0"
+    "socketio": "^1.0.0",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.20",
     "@babel/core": "^7.20.5",
     "@babel/node": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
-    "nodemon": "^2.0.20"
+    "@babel/register": "^7.18.9",
+    "babelify": "^10.0.0",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-bro": "^2.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-image": "^6.3.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-webserver": "^0.9.1",
+    "node-sass": "^8.0.0",
+    "uglifyify": "^5.0.2"
   }
 }

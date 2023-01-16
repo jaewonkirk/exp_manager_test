@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(type="stylesheet" href="css/styles.css")
+        title Exp manager - bronkhorst test page
+    body 
+        h1 Test Page for Devices 
+        hr
+        section#socket socket info
+        hr
+        section#ports
+            h2 Ports
+            button#refresh-ports Refresh Ports
+            button#hide-ports Hide
+            #ports-wrapper
+
+        hr
+
+script(src="/socket.io/socket.io.js")
+script(src="js/main.js")
+

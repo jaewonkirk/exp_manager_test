@@ -1,0 +1,27 @@
+mixin port(item)
+    div.port(class = item.path)
+        h3=item.path
+        span=item.pnpId
+        if item.isOpen
+            span.port-isopen Open
+            span.port-baudrate=item.openOptions.baudRate
+            span.type=item.type
+            form.identify-port(class=item.path)
+                input( type="hidden" name = "path", value = item.path)
+                button.port-identify Identify Device
+            form.close-port(class=item.path)
+                input( type="hidden" name = "path", value = item.path)
+                button.close-port Close Port
+            .node-wrapper node info
+        else 
+            span.port-isopen Closed
+            form.open-port(class=item.path)
+                input( type="hidden" name = "path", value = item.path)
+                input( list = "baudrateList" name = "baudrate" required)
+                datalist#baudrateList 
+                    option(value=19200)
+                    option(value=38400)
+                button Open Port
+
+each con in connections
+    +port(con)
